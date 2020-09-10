@@ -14,7 +14,10 @@ const App = () => {
     const fetchActors = async () => {
       await fetchStarWarsData('people')
         .then(({ data }) => {
-          setActors(data.results)
+          const results = data.results.filter((result, i, results) => {
+            return results.length - 1 !== i;
+          })
+          setActors(results)
         }).catch(err => {
           console.log(err)
         })
@@ -23,7 +26,7 @@ const App = () => {
     fetchActors();
   }, [])
 
-  const handleChange = async (e) => {
+  const handleSearchChange = async (e) => {
     await searchStarWarsActor('people', e)
       .then(({ data }) => {
         setActors(data.results)
@@ -40,7 +43,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar handleChange={e => handleChange(e.target.value)} />
+      <Navbar handleChange={e => handleSearchChange(e.target.value)} />
       <Container maxWidth="sm" className="container">
         {ActorsList}
       </Container>

@@ -21,15 +21,15 @@ const AvatarImg = ({ name }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            // await fetchGoogleImages(name)
-            //     .then(({ data }) => {
-            //         if (data && data.items) {
-            //             const rnd = Math.floor(Math.random() * data.items.length)
-            //             setGoogleImage(data.items[rnd].link)
-            //         }
-            //     }).catch(err => {
-            //         console.log(err)
-            //     })
+            await fetchGoogleImages(name)
+                .then(({ data }) => {
+                    if (data && data.items) {
+                        const rnd = Math.floor(Math.random() * data.items.length)
+                        setGoogleImage(data.items[rnd].link)
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
         };
 
         fetchData();

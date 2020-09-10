@@ -29,7 +29,6 @@ const CardComponent = ({ name, children }) => {
           <AvatarImg name={name} />
         }
         title={name}
-        subheader="September 14, 2016"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="div">
