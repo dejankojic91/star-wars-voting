@@ -38,5 +38,5 @@ npm start
 
 ## Data Source
 
-[Open Disease Data](https://swapi.dev/)
+[The Star Wars API](https://swapi.dev/)
 
