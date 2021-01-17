@@ -1,4 +1,4 @@
-# [Star Wars Voting React Application]
+# [Star Wars Real-Time Voting React Application]
 
 
 ## Technologies used
